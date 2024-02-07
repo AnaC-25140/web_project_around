@@ -1,0 +1,23 @@
+.header__container {
+  margin: 45px auto 0 auto ;
+  border-bottom: 1px solid #545454;
+  max-width: 880px;
+  max-height: 74px;
+
+}
+.header__logo{
+  max-width: 126px;
+  max-height: 24px;
+  margin-bottom: 41px;
+  text-align: left;
+}
+@media screen and (max-width: 768px) {
+  .header__logo {
+    margin-left: 27px ;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header__logo {
+    margin-left: 27px ;
+  }
+}
