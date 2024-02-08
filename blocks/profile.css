@@ -4,7 +4,7 @@
   margin: 40px auto 0;
   text-align: center;
   grid-template-columns: 120px 403px 42px 315px;
-  grid-template-rows: 61px 59px ;
+  grid-template-rows: 61px 59px;
   display: grid;
   grid-template-areas:
   "picture name edit add"

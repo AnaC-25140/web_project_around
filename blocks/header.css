@@ -1,5 +1,5 @@
 .header__container {
-  margin: 45px auto 0 auto ;
+  margin: 45px auto 0 auto;
   border-bottom: 1px solid #545454;
   max-width: 880px;
   max-height: 74px;
@@ -12,11 +12,11 @@
 }
 @media screen and (max-width: 768px) {
   .header__logo {
-    margin-left: 27px ;
+    margin-left: 27px;
   }
 }
 @media screen and (max-width: 320px) {
   .header__logo {
-    margin-left: 27px ;
+    margin-left: 27px;
   }
 }
