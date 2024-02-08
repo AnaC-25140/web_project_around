@@ -1,6 +1,6 @@
 .popup__container{
   display: flex;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.479);
   height: 100vh;
   width: 100vw;
   top: 0;
@@ -73,13 +73,9 @@
   left: 421.72px;
   top: -330px;
 }
-.popup__closed{
-  display: none;
-}
 .popup__close-button:hover{
   opacity: 80%;
 }
-
 @media screen and (max-width: 1440px) {
   .popup__form{
  left: 500px;
@@ -107,8 +103,6 @@
     left: 256px;
     top: -336px;
   }
-
-
 }
 
 

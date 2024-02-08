@@ -1,7 +1,6 @@
 .footer__container {
   max-width: 880px;
   margin: 66px auto 60px auto;
-
 }
 .footer__text{
   font-family: Inter;
@@ -12,14 +11,10 @@ letter-spacing: 0em;
 text-align: left;
 color: #545454;
 ;
-
 }
-
 @media screen and (max-width: 320px) {
   .footer__container {
     max-width: 880px;
     margin: 48px auto auto 19px;
-
   }
-
 }

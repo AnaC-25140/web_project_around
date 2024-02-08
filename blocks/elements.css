@@ -1,86 +1,28 @@
 .elements__container-top{
-  max-width: 282px;
-  max-height: 362px;
-  margin: 50px auto 0;
+  max-width: 900px;
+  margin: 50px auto auto;
   display: grid;
   grid-template-columns: 282px 282px 282px;
-  grid-template-rows: 282px 79px;
-  grid-template-areas:
-  "Yosemite Lake Bald"
-  "Yosemite__name Lake__name Bald__name";
-  column-gap: 17px;
-  justify-content: center;
-}
-.elements__container-bottom{
-  max-width: 282px;
-  max-height: 362px;
-  margin: 20px auto 0;
-  display: grid;
-  grid-template-columns: 282px 282px 282px;
-  grid-template-rows: 282px 79px;
-  grid-template-areas:
-  "Latemar Vanoise Lago"
-  "Latemar__name Vanoise__name Lago__name";
-  column-gap: 17px;
+  gap: 17px;
   justify-content: center;
 }
 .elements__place{
-  width: 282px;
-  height: 282px;
-}
-.elements__place-Yosemite{
-  grid-area: Yosemite;
-}
-.elements__place-Lake {
-  grid-area: Lake;
-}
-.elements__place-Bald{
-  grid-area: Bald;
-}
-.elements__place-Latemar{
-  grid-area: Latemar;
-}
-.elements__place-Vanoise{
-  grid-area: Vanoise;
-}
-.elements__place-Lago{
-  grid-area: Lago;
+  max-width: 282px;
+  max-height: 362px;
 }
 .elements__place__picture{
-  width: 282px;
+  width: 100%;
   height: 282px;
   border-radius: 10px 10px 0 0;
+  margin-bottom: -4px;
 }
 .elements__box{
+  display: flex;
   background-color: #ffffff;
-  width: 282px;
+  width: 100%;
   height: 79px;
   border-radius: 0 0 10px 10px;
   margin: 0;
-}
-.elements__box-Yosemite{
-  grid-area: Yosemite__name;
-  display: flex;
-}
-.elements__box-Lake{
-  grid-area: Lake__name;
-  display: flex;
-}
-.elements__box-Bald{
-  grid-area: Bald__name;
-  display: flex;
-}
-.elements__box-Latemar{
-  grid-area: Latemar__name;
-  display: flex;
-}
-.elements__box-Vanoise{
-  grid-area: Vanoise__name;
-  display: flex;
-}
-.elements__box-Lago{
-  grid-area: Lago__name;
-  display: flex;
 }
 .elements__box-name{
   font-family: Inter;
@@ -100,37 +42,9 @@
 @media screen and (max-width: 320px) {
   .elements__container-top{
     max-width: 282px;
-    max-height: 1123px;
     display: grid;
     grid-template-columns: 282px;
-    grid-template-rows: 282px 79px 282px 79px 282px 79px;
-    grid-template-areas:
-    "Yosemite"
-    "Yosemite__name"
-    "Lake"
-    "Lake__name"
-    "Bald"
-    "Bald__name"
-    ;
     margin-top: 36px;
-  }
-
-  .elements__container-bottom{
-    max-width: 282px;
-    max-height: 1123px;
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: 282px;
-    grid-template-rows: 282px 79px 282px 79px 282px 79px;
-    grid-template-areas:
-    "Latemar"
-    "Latemar__name"
-    "Vanoise"
-    "Vanoise__name"
-    "Lago"
-    "Lago__name"
-    ;
-
   }
   .elements__place__picture{
     margin-top: 20px;
