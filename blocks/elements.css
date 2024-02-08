@@ -10,7 +10,7 @@
   max-width: 282px;
   max-height: 362px;
 }
-.elements__place__picture{
+.elements__place-picture{
   width: 100%;
   height: 282px;
   border-radius: 10px 10px 0 0;
@@ -46,7 +46,7 @@
     grid-template-columns: 282px;
     margin-top: 36px;
   }
-  .elements__place__picture{
+  .elements__place-picture{
     margin-top: 20px;
   }
 }
