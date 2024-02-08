@@ -26,8 +26,8 @@ function closePopup(){
 }
 function saveInformation(event){
   event.preventDefault();
-  profileName.textContent= nameInput.value;
-  profileAbout.textContent= aboutInput.value;
+  profileName.textContent= "Hola";
+  profileAbout.textContent= "Jeje";
   closePopup();
 }
 

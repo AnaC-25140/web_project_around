@@ -53,6 +53,9 @@
 .profile__edit:hover{
 opacity: 80%;
 }
+.elements__box-heart:hover{
+  opacity: 80%;
+}
 
 .profile__add__button{
   width: 22px;
