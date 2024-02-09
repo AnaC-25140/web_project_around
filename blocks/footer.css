@@ -11,9 +11,13 @@ letter-spacing: 0em;
 text-align: left;
 color: #545454;
 }
+@media screen and (max-width: 768px) {
+  .footer__container {
+    margin: 48px auto auto 19px;
+  }
+}
 @media screen and (max-width: 320px) {
   .footer__container {
-    max-width: 880px;
     margin: 48px auto auto 19px;
   }
 }

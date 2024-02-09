@@ -33,11 +33,22 @@
   text-align: left;
   color: #000000;
   margin: 25px 0 auto 21px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .elements__box-heart{
   width: 21px;
   height: 18px;
   margin: 31px 22px auto auto;
+}
+@media screen and (max-width: 768px) {
+  .elements__container-top{
+    max-width: 720px;
+    display: grid;
+    grid-template-columns: 240px 240px 240px;
+    gap: 10px;
+  }
 }
 @media screen and (max-width: 320px) {
   .elements__container-top{
