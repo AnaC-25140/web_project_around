@@ -21,7 +21,6 @@
 .popup__form-title{
   width: 358px;
   color: #000000;
-  font-family: Inter;
   font-size: 24px;
   font-weight: 900;
   line-height: 29px;
@@ -34,7 +33,6 @@
   margin: 54px auto 0 36px;
   border: 0;
   border-bottom: 1px solid #000000;
-  font-family: Inter;
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
@@ -46,7 +44,6 @@
   margin: 30px auto 0 36px;
   border: 0;
   border-bottom: 1px solid #000000;
-  font-family: Inter;
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
@@ -57,7 +54,6 @@
   width: 358px;
   height: 51px;
   margin: 48px auto auto 36px;
-  font-family: Inter;
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
@@ -86,24 +82,50 @@
 .popup__close-button:hover{
   opacity: 80%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px){
   .popup__form{
   margin: 195px auto;
   }
   .popup__close-button{
     top: 147px;
+    left: 655px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .popup__close-button{
     left: 595px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 720px) {
+  .popup__close-button{
+    left: 580px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .popup__close-button{
+    left: 540px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .popup__close-button{
+    left: 490px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .popup__close-button{
+    left: 420px;
+  }
+}
+@media screen and (max-width: 480px) {
   .popup__form{
     width: 282px;
     height: 322px;
-    margin: 123px auto;
+    margin: 123px auto auto auto;
   }
   .popup__form-title{
     width: 228px;
     margin: 25px auto 0;
+    font-size: 18px;
   }
   .popup__form-name{
     width: 228px;
@@ -120,10 +142,29 @@
   .popup__close-button{
     width: 26px;
     height: 26px;
-    left: 265px;
+    left: 355px;
     top: 73px;
   }
 }
+@media screen and (max-width: 400px) {
+  .popup__close-button{
+    left: 315px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .popup__close-button{
+    left: 290px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .popup__close-button{
+    left: 265px;
+  }
+  .popup__close{
+  width: 0;
+  }
+}
+
 
 
 
