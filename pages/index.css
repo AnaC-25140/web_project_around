@@ -5,6 +5,5 @@
 @import url(../blocks/profile.css);
 @import url(../blocks/elements.css);
 @import url(../blocks/popup.css);
-@import url(../fonts/Inter-Black.ttf);
-@import url(../fonts/Inter-Medium.ttf);
-@import url(../fonts/Inter-Regular.ttf);
+@import url(../blocks/fonts.css);
+

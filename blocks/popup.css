@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   position: fixed;
+  font-family: "Inter", sans-serif;
 }
 .popup__form{
   width: 430px;
@@ -38,6 +39,7 @@
   line-height: 17px;
   letter-spacing: 0em;
   text-align: left;
+
 }
 .popup__form-about{
   width: 358px;
@@ -71,6 +73,7 @@
 }
 .popup__opened{
   display: flex;
+
 }
 .popup__close-button{
   position: relative;
