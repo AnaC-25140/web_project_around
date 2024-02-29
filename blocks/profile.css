@@ -56,6 +56,7 @@
   height: 50px;
   margin: 35px auto auto 160px;
   border: 2px solid #FFFFFF;
+  cursor: pointer;
 }
 .profile__add:hover{
   opacity: 80%;

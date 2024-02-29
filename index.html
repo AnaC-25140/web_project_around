@@ -51,6 +51,10 @@
                 alt="Boton para decir que te gusta la imagen"
                 class="elements__box-heart" />
               </div>
+              <a><img
+                src="./images/Delate-button.png"
+                alt="Boton para eliminar imagen"
+                class="elements__place-delate " /></a>
             </div>
               <div class="elements__place">
                 <img
@@ -64,6 +68,10 @@
                   alt="Boton para decir que te gusta la imagen"
                   class="elements__box-heart" />
                 </div>
+                <a><img
+                  src="./images/Delate-button.png"
+                  alt="Boton para eliminar imagen"
+                  class="elements__place-delate " /></a>
               </div>
                 <div class="elements__place ">
                   <img
@@ -77,6 +85,10 @@
                     alt="Boton para decir que te gusta la imagen"
                     class="elements__box-heart" />
                   </div>
+                  <a><img
+                    src="./images/Delate-button.png"
+                    alt="Boton para eliminar imagen"
+                    class="elements__place-delate " /></a>
                 </div>
             <div class="elements__place ">
               <img
@@ -90,6 +102,10 @@
                 alt="Boton para decir que te gusta la imagen"
                 class="elements__box-heart" />
               </div>
+              <a><img
+                src="./images/Delate-button.png"
+                alt="Boton para eliminar imagen"
+                class="elements__place-delate " /></a>
             </div>
               <div class="elements__place ">
                 <img
@@ -103,6 +119,10 @@
                   alt="Boton para decir que te gusta la imagen"
                   class="elements__box-heart" />
                 </div>
+                <a><img
+                  src="./images/Delate-button.png"
+                  alt="Boton para eliminar imagen"
+                  class="elements__place-delate " /></a>
               </div>
                 <div class="elements__place">
                   <img
@@ -116,29 +136,48 @@
                     alt="Boton para decir que te gusta la imagen"
                     class="elements__box-heart" />
                   </div>
+                  <a><img
+                    src="./images/Delate-button.png"
+                    alt="Boton para eliminar imagen"
+                    class="elements__place-delate " /></a>
                 </div>
           </div>
         </section>
-        <section class="popup">
-          <div class="popup__container">
+        <section class="popup" id="editProfile">
+          <div class="popup__container" >
             <a class="popup__close"><img
               src="./images/Close-Icon.png"
               alt="Boton para cerrar formulario"
-              class="popup__close-button" />
+              class="popup__close-button"
+              id="editCloseButton" 
+              />
             </a>
-            <form class="popup__form">
+            <form class="popup__form" id="editForm">
               <h2 class="popup__form-title">Edit profile</h2>
-              <input class="popup__form-name" type="text"/>
-              <input class="popup__form-about" type="text"/>
-              <button class="popup__form-save" type="submit">Save </button>
+              <input class="popup__form-name" type="text" id="editName"/>
+              <input class="popup__form-about" type="text" id="editAbout"/>
+              <button class="popup__form-save" type="submit" id="editSave">Save </button>
             </form>
-            <a class="popup__close"><img
-              src="./images/Close-Icon.png"
-              alt="Boton para cerrar formulario"
-              class="popup__close-button" />
-            </a>
           </div>
         </section>
+        <section class="popup" id="addImage">
+          <div class="popup__container" >
+            <a class="popup__close"><img
+              src="./images/Close-Icon.png"
+              alt="Boton para cerrar formulario"
+              class="popup__close-button" 
+              id="addCloseButton" />
+            </a>
+            <form class="popup__form" id="addForm">
+              <h2 class="popup__form-title">Nuevo lugar</h2>
+              <input class="popup__form-name" type="text" id="addTitle" placeholder="Titulo"/>
+              <input class="popup__form-about" type="text" id="addLink"placeholder="Enlace a la imagen"/>
+              <button class="popup__form-save" type="submit" id="addSave">Crear </button>
+            </form>
+          </div>
+        </section>
+
+       
       </main>
       <footer class="footer">
         <div class="footer__container">
