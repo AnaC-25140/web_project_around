@@ -75,7 +75,7 @@
 .popup__opened{
   display: flex;
 }
-.popup__container{
+.popup__image-container{
   display: flex;
   background-color: rgba(0, 0, 0, 0.479);
   height: 100vh;
