@@ -75,7 +75,7 @@
 .popup__opened{
   display: flex;
 }
-.popup__image__container{
+.popup__container{
   display: flex;
   background-color: rgba(0, 0, 0, 0.479);
   height: 100vh;
@@ -85,7 +85,7 @@
   position: fixed;
   font-family: "Inter", sans-serif;
 }
-.popup__image__container-inside{
+.popup__container-inside{
   display: flex;
   flex-direction: column;
   margin: auto;
