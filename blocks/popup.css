@@ -100,12 +100,12 @@
 .popup__close-button:hover{
   opacity: 80%;
 }
-.popup__image__close{
+.popup__image-close{
   width: 40px;
   height: 40px;
   margin: auto -40px auto auto;
 }
-.popup__image__close:hover{
+.popup__image-close:hover{
   opacity: 80%;
 }
 .popup__title{
@@ -205,7 +205,7 @@
     max-width: 240px;
     max-height: 299px;
   }
-  .popup__image__close{
+  .popup__image-close{
     width: 30px;
     height: 30px;
     margin: auto -30px auto auto;
