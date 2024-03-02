@@ -39,108 +39,7 @@
         </section>
         <section class="elements">
           <div class="elements__container-top">
-            <div class="elements__place">
-              <img
-              src="./images/Yosemite-Valley.jpg"
-              alt="Imagen de Yosemite Valley"
-              class="elements__place-picture " />
-              <div class="elements__box">
-                <h4 class="elements__box-name">Yosemite Valley</h4>
-                <img
-                src="./images/Heart.jpg"
-                alt="Boton para decir que te gusta la imagen"
-                class="elements__box-heart" />
-              </div>
-              <a><img
-                src="./images/Delate-button.png"
-                alt="Boton para eliminar imagen"
-                class="elements__place-delate " /></a>
-            </div>
-              <div class="elements__place">
-                <img
-                src="./images/Lake-Louise.jpg"
-                alt="Imagen de Lake Louise"
-                class="elements__place-picture " />
-                <div class="elements__box">
-                  <h4 class="elements__box-name">Lake Louise</h4>
-                  <img
-                  src="./images/Heart.jpg"
-                  alt="Boton para decir que te gusta la imagen"
-                  class="elements__box-heart" />
-                </div>
-                <a><img
-                  src="./images/Delate-button.png"
-                  alt="Boton para eliminar imagen"
-                  class="elements__place-delate " /></a>
-              </div>
-                <div class="elements__place ">
-                  <img
-                  src="./images/Bald-Mountains.jpg"
-                  alt="Imagen de Bald Mountains"
-                  class="elements__place-picture " />
-                  <div class="elements__box ">
-                    <h4 class="elements__box-name">Bald Mountains</h4>
-                    <img
-                    src="./images/Heart.jpg"
-                    alt="Boton para decir que te gusta la imagen"
-                    class="elements__box-heart" />
-                  </div>
-                  <a><img
-                    src="./images/Delate-button.png"
-                    alt="Boton para eliminar imagen"
-                    class="elements__place-delate " /></a>
-                </div>
-            <div class="elements__place ">
-              <img
-              src="./images/Latemar.jpg"
-              alt="Imagen de Latemar"
-              class="elements__place-picture " />
-              <div class="elements__box ">
-                <h4 class="elements__box-name">Latemar</h4>
-                <img
-                src="./images/Heart.jpg"
-                alt="Boton para decir que te gusta la imagen"
-                class="elements__box-heart" />
-              </div>
-              <a><img
-                src="./images/Delate-button.png"
-                alt="Boton para eliminar imagen"
-                class="elements__place-delate " /></a>
-            </div>
-              <div class="elements__place ">
-                <img
-                src="./images/Vanoise.jpg"
-                alt="Imagen de Vanoise"
-                class="elements__place-picture " />
-                <div class="elements__box">
-                  <h4 class="elements__box-name">Vanoise National Park</h4>
-                  <img
-                  src="./images/Heart.jpg"
-                  alt="Boton para decir que te gusta la imagen"
-                  class="elements__box-heart" />
-                </div>
-                <a><img
-                  src="./images/Delate-button.png"
-                  alt="Boton para eliminar imagen"
-                  class="elements__place-delate " /></a>
-              </div>
-                <div class="elements__place">
-                  <img
-                  src="./images/Lago-di-Braies.jpg"
-                  alt="Imagen de Lago di Braies"
-                  class="elements__place-picture " />
-                  <div class="elements__box ">
-                    <h4 class="elements__box-name">Lago di Braies</h4>
-                    <img
-                    src="./images/Heart.jpg"
-                    alt="Boton para decir que te gusta la imagen"
-                    class="elements__box-heart" />
-                  </div>
-                  <a><img
-                    src="./images/Delate-button.png"
-                    alt="Boton para eliminar imagen"
-                    class="elements__place-delate " /></a>
-                </div>
+            
           </div>
         </section>
         <section class="popup" id="editProfile">
@@ -170,23 +69,67 @@
             </a>
             <form class="popup__form" id="addForm">
               <h2 class="popup__form-title">Nuevo lugar</h2>
-              <input class="popup__form-name" type="text" id="addTitle" placeholder="Titulo"/>
-              <input class="popup__form-about" type="text" id="addLink"placeholder="Enlace a la imagen"/>
+              <input 
+              class="popup__form-name" 
+              type="text" 
+              id="addTitle" 
+              placeholder="Titulo"
+              required
+              minlength="2"
+              />
+              <input 
+              class="popup__form-about" 
+              type="text" 
+              id="addLink"
+              placeholder="Enlace a la imagen"
+              required
+              minlength="2"
+              />
               <button class="popup__form-save" type="submit" id="addSave">Crear </button>
             </form>
           </div>
         </section>
-
-       
+        <section class=" popup" id="popup__Image">
+          <div class="popup__image__container">
+            <div class="popup__image__container-inside">
+              <a class="popup__image__close"><img
+                src="./images/Close-Icon.png"
+                alt="Boton para cerrar formulario"
+                class="popup__image__close-button" 
+                />
+              </a>
+                <img
+                class="popup__image-open"
+                src=""/>
+                <h3 class="popup__title"> 
+                </h3>
+            </div>
+          </div>
+        </section>
       </main>
       <footer class="footer">
         <div class="footer__container">
           <p class="footer__text">&#169; 2020 Around The U.S.</p>
         </div>
       </footer>
-    </div>
+    <template class="template">
+      <div class="elements__place">
+        <img
+        src=""
+        alt="Imagen de Yosemite Valley"
+        class="elements__place-picture " />
+        <div class="elements__box">
+          <h4 class="elements__box-name"></h4>
+          <button class="elements__box-heart" ></button>
+        </div>
+        <a><img
+          src="./images/Delate-button.png"
+          alt="Boton para eliminar imagen"
+          class="elements__place-delate " /></a>
+      </div>
+    </template>
+
     <script src="./scripts/index.js"></script>
-    <!--No puedo subir el proyecto si pongo la importacion del script
-    despues del body, en el validator lo marca como mal -->
+    
   </body>
 </html>

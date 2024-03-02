@@ -52,6 +52,15 @@
   width: 21px;
   height: 18px;
   margin: 31px 22px auto auto;
+  background-image: url("../images/Heart.jpg");
+  border: none;
+}
+.elements__box-heart-active{
+  width: 21px;
+  height: 18px;
+  margin: 31px 22px auto auto;
+  background-image: url("../images/Union.jpg");
+  border: none;
 }
 @media screen and (max-width: 880px)  {
   .elements__container-top{
