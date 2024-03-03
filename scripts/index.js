@@ -8,11 +8,12 @@ const nameInput=formElement.querySelector("#editName");
 const aboutInput=formElement.querySelector("#editAbout");
 const saveButton=document.querySelector("#editSave");
 const closeButton= editPopupElement.querySelector("#editCloseButton");
-const addPopupButton= document.querySelector(".profile__add-button");// boton pop up imagenes
+const addPopupButton= document.querySelector(".profile__add");// boton pop up imagenes
 const addPopupElement= document.querySelector("#addImage");
 const addSaveButton=document.querySelector("#addSave");
 const addCloseButton= addPopupElement.querySelector("#addCloseButton");
 const templateCard=document.querySelector(".template");
+const prueba=templateCard.querySelector(".elements__place");
 const cardArea= document.querySelector(".elements__container-top");
 const inputCardTitle=document.querySelector("#addTitle");
 const inputCardUrl=document.querySelector("#addLink");
@@ -21,6 +22,7 @@ const popupImage=document.querySelector("#popup__image");
 const popupImageCloseButton=document.querySelector(".popup__image-close-button");
 const popupTitle=document.querySelector(".popup__title");
 const popupOpenedImage=document.querySelector(".popup__image-open");
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -97,6 +99,10 @@ function handleAddSubmit(event){
   const newCard = cardGenerator (inputCardTitle.value, inputCardUrl.value);
   cardArea.prepend(newCard); //prepend es para que agregue al inicio, si lo quito pone la card al final
   closeAddPopup();
+  resetImage();
+}
+function resetImage(){
+  addFormElement.reset();
 }
 //abrir y cerrar imagen
 function handleOpenImage(title,link){
@@ -107,8 +113,6 @@ function handleOpenImage(title,link){
 function handleCloseImage(){
   popupImage.classList.remove("popup__opened");
 }
-
-
 editProfileButton.addEventListener("click",handleOpenEditPopup);
 closeButton.addEventListener("click",closeEditPopup);
 saveButton.addEventListener("click",handleSaveInformation);

@@ -15,7 +15,7 @@
   height: 282px;
   border-radius: 10px 10px 0 0;
   margin-bottom: -4px;
-  
+  cursor: pointer;
 }
 .elements__place-delate{
   position: relative;
@@ -47,6 +47,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 210px;
 }
 .elements__box-heart{
   width: 21px;
@@ -72,6 +73,10 @@
   .elements__place-picture{
     height: 240px;
   }
+  .elements__place-delate{
+    top: -310px;
+    left: 210px;
+  }
 }
 @media screen and (max-width: 768px)  {
   .elements__container-top{
@@ -88,6 +93,9 @@
   .elements__place-picture{
     height: 240px;
   }
+  .elements__place-delate{
+    left: 250px;
+  }
 }
 @media screen and (max-width: 581px)  {
   .elements__container-top{
@@ -98,6 +106,10 @@
   }
   .elements__place-picture{
     height: 282px;
+  }
+  .elements__place-delate{
+    top: -350px;
+    left: 248px;
   }
 }
 @media screen and (max-width: 320px) {

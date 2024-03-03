@@ -8,6 +8,12 @@
   position: fixed;
   font-family: "Inter", sans-serif;
 }
+.popup__align{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: flex-end;
+}
 .popup__form{
   width: 430px;
   height: 330px;
@@ -17,7 +23,6 @@
   display:flex;
   flex-direction: column;
   border-radius: 10px;
-  margin: 195px auto;
 }
 .popup__form-title{
   width: 358px;
@@ -28,7 +33,6 @@
   letter-spacing: 0em;
   text-align: left;
   margin: 34px auto 0 36px;
-
 }
 .popup__form-name{
   width: 358px;
@@ -40,7 +44,6 @@
   line-height: 17px;
   letter-spacing: 0em;
   text-align: left;
-
 }
 .popup__form-about{
   width: 358px;
@@ -91,11 +94,7 @@
   margin: auto;
 }
 .popup__close-button{
-  position: relative;
-  width: 40px;
-  height: 40px;
-  top: 147px;
-  left: 935px;
+  margin-right: -28px;
 }
 .popup__close-button:hover{
   opacity: 80%;
@@ -120,45 +119,28 @@
   max-width: 816px;
   max-height: 540px;
 }
+
 @media screen and (max-width: 880px){
   .popup__form{
   margin: 195px auto;
   }
-  .popup__close-button{
-    top: 147px;
-    left: 655px;
-  }
 }
 @media screen and (max-width: 768px) {
-  .popup__close-button{
-    left: 595px;
+  .popup__align{
+    margin-top: 195px;
   }
-}
-@media screen and (max-width: 720px) {
-  .popup__close-button{
-    left: 580px;
-  }
-}
-@media screen and (max-width: 650px) {
-  .popup__close-button{
-    left: 540px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .popup__close-button{
-    left: 490px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .popup__close-button{
-    left: 420px;
-  }
+  .popup__form{
+    margin-top: 0;
+    }
 }
 @media screen and (max-width: 480px) {
+  .popup__align{
+    margin-top: 123px;
+  }
   .popup__form{
     width: 282px;
     height: 322px;
-    margin: 123px auto auto auto;
+    margin-top: 0;
   }
   .popup__form-title{
     width: 228px;
@@ -180,23 +162,19 @@
   .popup__close-button{
     width: 26px;
     height: 26px;
-    left: 355px;
-    top: 73px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .popup__close-button{
-    left: 315px;
-  }
-}
-@media screen and (max-width: 350px) {
-  .popup__close-button{
-    left: 290px;
   }
 }
 @media screen and (max-width: 320px) {
+  .popup__align{
+    margin-top: 123px;
+  }
+  .popup__form{
+    margin-top: 0;
+  }
   .popup__close-button{
-    left: 265px;
+    width: 26px;
+    height: 26px;
+    margin: 0 auto 13px -24px;
   }
   .popup__close{
   width: 0;
@@ -211,6 +189,7 @@
     margin: auto -30px auto auto;
   }
 }
+
 
 
 
