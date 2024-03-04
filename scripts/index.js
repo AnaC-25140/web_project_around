@@ -79,6 +79,7 @@ function cardGenerator(title,link){
   const deleteButton=card.querySelector(".elements__place-delate");
   cardImage.src=link;
   cardTitle.textContent=title;
+  cardImage.alt=title;
   likeButton.addEventListener("click", function(){
     likeButton.classList.toggle("elements__box-heart-active"); //el toggle es para que si lo tiene lo quite y al reves
   });
