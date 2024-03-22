@@ -135,6 +135,7 @@ document.addEventListener("click", (e)=>{
   if (e.target.matches(".popup__container")){
     closeEditPopup();
     closeAddPopup();
+    handleCloseImage();
   }
   });
 

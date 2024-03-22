@@ -52,7 +52,7 @@
                 id="editCloseButton" 
                 />
               </a>
-              <fieldset class="form__set">
+              
                 <form class="popup__form popup__form-profile" id="editForm" novalidate >
                   <h2 class="popup__form-title">Edit profile</h2>
                   <input 
@@ -62,7 +62,7 @@
                   minlength="2"
                   maxlength="40"
                   required/>
-                  <span class="popup__error editName-error"></span>
+                  <span class="editName-error popup__error"></span>
                   <input 
                   class="popup__form-about popup__input-profile" 
                   type="text" 
@@ -70,10 +70,15 @@
                   minlength="2"
                   maxlength="200"
                   required/>
-                  <span class="popup__error editAbout-error"></span>
-                  <button class="popup__form-save popup__form-save-profile" type="submit" id="editSave">Save </button>
+                  <span class="editAbout-error popup__error"></span>
+                  <button 
+                  class="popup__form-save popup__form-save-profile" 
+                  type="submit" 
+                  id="editSave">
+                  Guardar
+                </button>
                 </form>
-              </fieldset>
+             
               
             </div>
           </div>
@@ -87,32 +92,33 @@
                 class="popup__close-button" 
                 id="addCloseButton" />
               </a>
-              <fieldset class="form__set">
-                <form class="popup__form popup__form-add" id="addForm">
+              
+                <form class="popup__form popup__form-add" id="addForm" novalidate>
                   <h2 class="popup__form-title">Nuevo lugar</h2>
                   <input 
                   class="popup__form-name popup__input-add" 
                   type="text" 
                   id="addTitle" 
                   placeholder="Titulo"
-                  required
                   minlength="2"
                   maxlength="30"
-                  />
-                  <span class="popup__error editTitle-error">este es error</span>
+                  required/>
+                  <span class="addTitle-error popup__error"></span>
                   <input 
                   class="popup__form-about popup__input-add" 
-                  type="text" 
+                  type="url" 
                   id="addLink"
                   placeholder="Enlace a la imagen"
-                  required
-                  minlength="2"
-                  maxlength="300"
-                  />
-                  <span class="popup__error editUrl-error"></span>
-                  <button class="popup__form-save popup__form-save-add" type="submit" id="addSave">Crear </button>
+                  required/>
+                  <span class="addLink-error popup__error"></span>
+                  <button 
+                  class="popup__form-save popup__form-save-add" 
+                  type="submit" 
+                  id="addSave">
+                  Crear 
+                </button>
                 </form>
-              </fieldset>
+              
              
             </div>
           </div>

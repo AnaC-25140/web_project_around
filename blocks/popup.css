@@ -142,21 +142,27 @@ background-color: #FFFFFF;
 color: #000000;
 opacity: 70%;
 }
-.form__set{
-border: none;
-}
-
 @media screen and (max-width: 880px){
   .popup__form{
-  margin: 195px auto;
+  margin: 125px auto auto auto;
+  }
+  .popup__close-button{
+    position: relative;
+    top: 120px;
+    left: 0px;
   }
 }
 @media screen and (max-width: 768px) {
   .popup__align{
-    margin-top: 195px;
+    margin-top: 145px;
   }
   .popup__form{
     margin-top: 0;
+    }
+    .popup__close-button{
+      position: relative;
+      top: 0px;
+      
     }
 }
 @media screen and (max-width: 480px) {
@@ -214,6 +220,10 @@ border: none;
     height: 30px;
     margin: auto -30px auto auto;
   }
+  .popup__error_visible{
+    width: 228px;
+    height: 16px;
+   }
 }
 
 
