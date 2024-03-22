@@ -23,6 +23,7 @@ const popupImageCloseButton=document.querySelector(".popup__image-close-button")
 const popupTitle=document.querySelector(".popup__title");
 const popupOpenedImage=document.querySelector(".popup__image-open");
 
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -54,7 +55,9 @@ function handleOpenEditPopup(){
   editPopupElement.classList.add("popup__opened"); //mandamos a llamar nuestra seccion de popup
   nameInput.value = profileNameElement.textContent; //le damos valor inicial a esos form que digan los nombres actuales
   aboutInput.value = profileAboutElement.textContent;
+  
 }
+
 function closeEditPopup(){
   editPopupElement.classList.remove("popup__opened");
 }
@@ -114,6 +117,27 @@ function handleOpenImage(title,link){
 function handleCloseImage(){
   popupImage.classList.remove("popup__opened");
 }
+
+//funcion para esc
+function keyHandlerProfile(escProfile){
+  if (escProfile.keyCode === 27){
+    closeEditPopup();
+  }
+}
+function keyHandlerAdd(escAdd){
+  if (escAdd.keyCode === 27){
+    closeAddPopup();
+  }
+}
+//aqui cerramos al hacer click fuera del formulario
+//target es para saber donde a ocurrido ese evento y matches es para donde
+document.addEventListener("click", (e)=>{
+  if (e.target.matches(".popup__container")){
+    closeEditPopup();
+    closeAddPopup();
+  }
+  });
+
 editProfileButton.addEventListener("click",handleOpenEditPopup);
 closeButton.addEventListener("click",closeEditPopup);
 saveButton.addEventListener("click",handleSaveInformation);
@@ -123,3 +147,12 @@ addCloseButton.addEventListener("click",closeAddPopup);
 addFormElement.addEventListener("submit",handleAddSubmit);
 
 popupImageCloseButton.addEventListener("click",handleCloseImage);
+
+nameInput.addEventListener("keydown", keyHandlerProfile);
+aboutInput.addEventListener("keydown", keyHandlerProfile);
+
+inputCardTitle.addEventListener("keydown", keyHandlerAdd);
+inputCardUrl.addEventListener("keydown", keyHandlerAdd);
+
+
+
