@@ -13,7 +13,6 @@ const addPopupElement= document.querySelector("#addImage");
 const addSaveButton=document.querySelector("#addSave");
 const addCloseButton= addPopupElement.querySelector("#addCloseButton");
 const templateCard=document.querySelector(".template");
-const prueba=templateCard.querySelector(".elements__place");
 const cardArea= document.querySelector(".elements__container-top");
 const inputCardTitle=document.querySelector("#addTitle");
 const inputCardUrl=document.querySelector("#addLink");
@@ -50,31 +49,46 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg"
   }
 ];
-
+function pressEnter(avoidEnter){
+  if (avoidEnter.keyCode == 13){
+    avoidEnter.preventDefault();
+  }
+}
+function pressEsc(esc){
+  if (esc.keyCode === 27){
+    closeEditPopup();
+    closeAddPopup();
+  }
+}
 function handleOpenEditPopup(){
   editPopupElement.classList.add("popup__opened"); //mandamos a llamar nuestra seccion de popup
   nameInput.value = profileNameElement.textContent; //le damos valor inicial a esos form que digan los nombres actuales
   aboutInput.value = profileAboutElement.textContent;
-  
+  document.addEventListener("keypress", pressEnter);
+  formElement.addEventListener("keydown", pressEsc);
 }
-
 function closeEditPopup(){
   editPopupElement.classList.remove("popup__opened");
+  document.removeEventListener("keypress", pressEnter);
 }
 function handleSaveInformation(event){
   event.preventDefault();
   profileNameElement.textContent= nameInput.value;
   profileAboutElement.textContent= aboutInput.value;
+  document.removeEventListener("keypress", pressEnter);
   closeEditPopup();
 }
 // aqui empiezan el de las imgs
 function handleOpenAddPopup(){
   addPopupElement.classList.add("popup__opened");
+  document.addEventListener("keypress", pressEnter);
+  addFormElement.addEventListener("keydown", pressEsc);
 }
 function closeAddPopup(){
   addPopupElement.classList.remove("popup__opened");
+  document.removeEventListener("keypress", pressEnter);
 }
-function cardGenerator(title,link){
+function generateCard(title,link){
   const card = templateCard.cloneNode(true).content.querySelector(".elements__place");
   const cardImage= card.querySelector(".elements__place-picture");
   const cardTitle = card.querySelector(".elements__box-name");
@@ -95,13 +109,14 @@ function cardGenerator(title,link){
   return card;
 }
 initialCards.forEach( function(element){
-  const newCard = cardGenerator(element.name, element.link);
+  const newCard = generateCard(element.name, element.link);
   cardArea.append(newCard);
 })
 function handleAddSubmit(event){
   event.preventDefault();
-  const newCard = cardGenerator (inputCardTitle.value, inputCardUrl.value);
+  const newCard = generateCard (inputCardTitle.value, inputCardUrl.value);
   cardArea.prepend(newCard); //prepend es para que agregue al inicio, si lo quito pone la card al final
+  document.removeEventListener("keypress", pressEnter);
   closeAddPopup();
   resetImage();
 }
@@ -111,23 +126,12 @@ function resetImage(){
 //abrir y cerrar imagen
 function handleOpenImage(title,link){
   popupOpenedImage.src=link;
+  popupOpenedImage.alt=title;
   popupTitle.textContent=title;
   popupImage.classList.add("popup__opened");
 }
 function handleCloseImage(){
   popupImage.classList.remove("popup__opened");
-}
-
-//funcion para esc
-function keyHandlerProfile(escProfile){
-  if (escProfile.keyCode === 27){
-    closeEditPopup();
-  }
-}
-function keyHandlerAdd(escAdd){
-  if (escAdd.keyCode === 27){
-    closeAddPopup();
-  }
 }
 //aqui cerramos al hacer click fuera del formulario
 //target es para saber donde a ocurrido ese evento y matches es para donde
@@ -138,22 +142,17 @@ document.addEventListener("click", (e)=>{
     handleCloseImage();
   }
   });
-
 editProfileButton.addEventListener("click",handleOpenEditPopup);
 closeButton.addEventListener("click",closeEditPopup);
 saveButton.addEventListener("click",handleSaveInformation);
+
 
 addPopupButton.addEventListener("click",handleOpenAddPopup);
 addCloseButton.addEventListener("click",closeAddPopup);
 addFormElement.addEventListener("submit",handleAddSubmit);
 
 popupImageCloseButton.addEventListener("click",handleCloseImage);
-
-nameInput.addEventListener("keydown", keyHandlerProfile);
-aboutInput.addEventListener("keydown", keyHandlerProfile);
-
-inputCardTitle.addEventListener("keydown", keyHandlerAdd);
-inputCardUrl.addEventListener("keydown", keyHandlerAdd);
-
+document.removeEventListener("keypress", pressEsc);
+document.removeEventListener("keydown", pressEsc);
 
 
