@@ -1,12 +1,12 @@
-@font-face {
+@font-face{
   font-family: "Inter";
   src: local("../vendor/fonts/Inter-Black.ttf") ;
 }
-@font-face {
+@font-face{
   font-family:"Inter";
   src: local("../vendor/fonts/Inter-Medium.ttf");
 }
-@font-face {
+@font-face{
   font-family: "Inter";
   src:  local("../vendor/fonts/Inter-Regular.ttf");
 }
