@@ -23,6 +23,7 @@ const popupTitle=document.querySelector(".popup__title");
 const popupOpenedImage=document.querySelector(".popup__image-open");
 
 
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -65,11 +66,12 @@ function handleOpenEditPopup(){
   nameInput.value = profileNameElement.textContent; //le damos valor inicial a esos form que digan los nombres actuales
   aboutInput.value = profileAboutElement.textContent;
   document.addEventListener("keypress", pressEnter);
-  formElement.addEventListener("keydown", pressEsc);
+  document.addEventListener("keydown", pressEsc);
 }
 function closeEditPopup(){
   editPopupElement.classList.remove("popup__opened");
   document.removeEventListener("keypress", pressEnter);
+  document.removeEventListener("keydown", pressEsc);
 }
 function handleSaveInformation(event){
   event.preventDefault();
@@ -82,11 +84,12 @@ function handleSaveInformation(event){
 function handleOpenAddPopup(){
   addPopupElement.classList.add("popup__opened");
   document.addEventListener("keypress", pressEnter);
-  addFormElement.addEventListener("keydown", pressEsc);
+  document.addEventListener("keydown", pressEsc);
 }
 function closeAddPopup(){
   addPopupElement.classList.remove("popup__opened");
   document.removeEventListener("keypress", pressEnter);
+  document.removeEventListener("keydown", pressEsc);
 }
 function generateCard(title,link){
   const card = templateCard.cloneNode(true).content.querySelector(".elements__place");
@@ -152,7 +155,6 @@ addCloseButton.addEventListener("click",closeAddPopup);
 addFormElement.addEventListener("submit",handleAddSubmit);
 
 popupImageCloseButton.addEventListener("click",handleCloseImage);
-document.removeEventListener("keypress", pressEsc);
 document.removeEventListener("keydown", pressEsc);
 
 
