@@ -4,6 +4,7 @@ const showInputError = (formElement, inputElement, errorMessage,settings) => {
   errorElement.textContent = errorMessage;
   errorElement.classList.add(settings.errorClass);
 };
+
 const hideInputError = (formElement, inputElement, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(settings.inputErrorClass);
@@ -71,6 +72,8 @@ const toggleButtonState = (inputList, buttonElement,settings) => {
 enableValidation(profileFormValues);
 enableValidation(addFormValues);
 
+// ctrl +k +c para comentar
+// ctrl + k + u para descomentar
 
   
 
