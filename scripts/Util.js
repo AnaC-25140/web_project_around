@@ -87,6 +87,7 @@ function handleSaveInformation(event){
 // aqui empiezan el de las imgs
 function handleOpenAddPopup(){
   addPopupElement.classList.add("popup__opened");
+  addSaveButton.classList.add("popup__button_disabled")
   document.addEventListener("keypress", pressEnter);
   document.addEventListener("keydown", pressEsc);
 }
