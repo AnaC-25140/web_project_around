@@ -1,6 +1,7 @@
 import  FormValidator  from "./FormValidator.js";
 import Card from "./Card.js";
 import {initialCards, templateCard, cardArea, addFormElement,formElement} from "./Util.js";
+import { Section } from "./Section.js";
 
 //lo de aqui es para la validacion
 
@@ -32,3 +33,9 @@ initialCards.forEach( function(element){
   const cardCreated = new Card (element.name, element.link, templateCard);
   cardArea.append(cardCreated.generateCard());
 })
+
+
+const SectionCards= new Section({
+  items: initialCards,
+  renderer: function(){}//la logica de agregar cartas
+}, "elements__container-top");
