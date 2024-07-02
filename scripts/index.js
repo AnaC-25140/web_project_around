@@ -28,14 +28,11 @@ const validateAddForm= new FormValidator(addFormElement, settingsAdd);
 validateAddForm.enableValidation();
 
 
-
-initialCards.forEach( function(element){
-  const cardCreated = new Card (element.name, element.link, templateCard);
-  cardArea.append(cardCreated.generateCard());
-})
-
-
-const SectionCards= new Section({
+const sectionCards= new Section({
   items: initialCards,
-  renderer: function(){}//la logica de agregar cartas
-}, "elements__container-top");
+  renderer: function(element){
+    const cardCreated = new Card (element.name, element.link, templateCard);
+    sectionCards.addItem(cardCreated.generateCard());
+  }//la logica de agregar cartas
+}, ".elements__container-top");
+sectionCards.renderer();

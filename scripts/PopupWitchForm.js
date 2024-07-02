@@ -19,3 +19,5 @@ const AddCardPopup= new PopupWithForm(()=>{
     //logica para procesar info  popup
 }, "#popup-cards");
 AddCardPopup.setEventListener();
+
+//Ejecutar formulario
