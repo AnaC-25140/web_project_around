@@ -3,7 +3,7 @@ import Card from "./Card.js";
 const profileElement= document.querySelector(".profile");
 const profileNameElement= profileElement.querySelector(".profile__name");
 const profileAboutElement= profileElement.querySelector(".profile__description");
-const editProfileButton= document.querySelector(".profile__edit");//boton para popup nombre
+//const editProfileButton= document.querySelector(".profile__edit");//boton para popup nombre
 const editPopupElement= document.querySelector("#editProfile");//secc de popup
 export const formElement= document.querySelector("#editForm"); //los edit son para nombre y acerca de
 const nameInput=formElement.querySelector("#editName");
@@ -120,24 +120,24 @@ function handleCloseImage(){
 }
 //aqui cerramos al hacer click fuera del formulario
 //target es para saber donde a ocurrido ese evento y matches es para donde
-document.addEventListener("click", (e)=>{
-  if (e.target.matches(".popup__container")){
-    closeEditPopup();
-    closeAddPopup();
-    handleCloseImage();
-  }
-  });
-editProfileButton.addEventListener("click",handleOpenEditPopup);
-closeButton.addEventListener("click",closeEditPopup);
+// document.addEventListener("click", (e)=>{
+//   if (e.target.matches(".popup__container")){
+//    closeEditPopup();
+//     closeAddPopup();
+//     handleCloseImage();
+//   }
+//   });
+//editProfileButton.addEventListener("click",handleOpenEditPopup);
+//closeButton.addEventListener("click",closeEditPopup);
 saveButton.addEventListener("click",handleSaveInformation);
 
 
-addPopupButton.addEventListener("click",handleOpenAddPopup);
-addCloseButton.addEventListener("click",closeAddPopup);
+//addPopupButton.addEventListener("click",handleOpenAddPopup);
+//addCloseButton.addEventListener("click",closeAddPopup);
 addFormElement.addEventListener("submit",handleAddSubmit);
 
 
-popupImageCloseButton.addEventListener("click",handleCloseImage);
+//popupImageCloseButton.addEventListener("click",handleCloseImage);
 document.removeEventListener("keydown", pressEsc);
 
 export{}

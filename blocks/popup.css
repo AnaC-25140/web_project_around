@@ -95,6 +95,7 @@
 }
 .popup__close-button{
   margin-right: -28px;
+  cursor: pointer;
 }
 .popup__close-button:hover{
   opacity: 80%;

@@ -25,10 +25,12 @@
                 class="profile__picture" />
             <h2 class="profile__name">Jacques Cousteau</h2>
             <h3 class="profile__description">Explorer</h3>
-            <a class="profile__edit"><img
+            <div class="profile__edit" ><img
                 src="./images/Edit_button.png"
                 alt="Boton para editar"
-                class="profile__img" /></a>
+                class="profile__img"
+                id="openModal"
+                 /></div>
               <div class="profile__add">
                 <img
                 src="./images/Add.png"
@@ -42,15 +44,17 @@
           </div>
         </section>
         <section class="popup" id="editProfile">
-          <div class="popup__container" >
+          <div class="popup__container"  id="modalBackground"  >
             <div class="popup__align">
-              <a class="popup__close"><img
+
+              <div class="popup__close"><img
                 src="./images/Close-Icon.png"
                 alt="Boton para cerrar formulario"
                 class="popup__close-button"
                 id="editCloseButton" 
                 />
-              </a>
+              </div>
+
                 <form class="popup__form popup__form-profile" id="editForm" novalidate >
                   <h2 class="popup__form-title">Edit profile</h2>
                   <input 
@@ -80,14 +84,14 @@
           </div>
         </section>
         <section class="popup" id="addImage">
-          <div class="popup__container"  >
+          <div class="popup__container" id="modalBackground"  >
             <div class="popup__align">
-              <a class="popup__close"><img
+              <div class="popup__close"><img
                 src="./images/Close-Icon.png"
                 alt="Boton para cerrar formulario"
                 class="popup__close-button" 
                 id="addCloseButton" />
-              </a>
+              </div>
                 <form class="popup__form popup__form-add" id="addForm" novalidate>
                   <h2 class="popup__form-title">Nuevo lugar</h2>
                   <input 
@@ -122,7 +126,7 @@
               <a class="popup__image-close"><img
                 src="./images/Close-Icon.png"
                 alt="Boton para cerrar formulario"
-                class="popup__image-close-button" 
+                class="popup__image-close-button " 
                 />
               </a>
                 <img

@@ -26,10 +26,10 @@ export default class Card{
     _handleRemoveCard(){
       this._removeCard=this.card.remove();
     }
-    _handleOpenImageCard(){
-      popupOpenedImage.src=this.link;
-      popupOpenedImage.alt=this.title;
-      popupTitle.textContent=this.title;
+     _handleOpenImageCard(){
+       popupOpenedImage.src=this.link;
+       popupOpenedImage.alt=this.title;
+       popupTitle.textContent=this.title;
       popupImage.classList.add("popup__opened");
     }
     
@@ -37,9 +37,9 @@ export default class Card{
       this.deleteButton.addEventListener("click", ()=>{
         this._handleRemoveCard();
       });
-      this.cardImage.addEventListener("click" , ()=>{
-        this._handleOpenImageCard();
-      } );
+      //  this.cardImage.addEventListener("click" , ()=>{
+      //    this._handleOpenImageCard();
+      //  } );
       this.likeButton.addEventListener("click", ()=>{
         this._handleLike();
       });
