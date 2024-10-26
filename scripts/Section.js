@@ -5,6 +5,7 @@ export class Section{
         this.container=document.querySelector(selector);
     }
     renderer(){
+        //renderiza con un item especial
         this.items.forEach((item) => this._renderer(item));
     }
     //el item es la carta y el renderer la funcion de añadir la carta

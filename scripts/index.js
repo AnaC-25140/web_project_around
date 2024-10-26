@@ -1,10 +1,9 @@
 import  FormValidator  from "./FormValidator.js";
 import Card from "./Card.js";
-import {initialCards, templateCard, cardArea, addFormElement,formElement} from "./Util.js";
+import {initialCards, templateCard, addFormElement,formElement,nameInput,aboutInput,profileNameElement,profileAboutElement} from "./Util.js";
 import { Section } from "./Section.js";
-import Popup from "./Popup.js";
 import  PopupWithImage  from "./PopupWithImage.js";
-
+import { PopupWithForm } from "./PopupWithForm.js";
 //lo de aqui es para la validacion
 const settings={
   formSelector: ".popup__form-profile",
@@ -22,42 +21,49 @@ const settingsAdd={
     inputErrorClass: "popup__input_type_error",
     errorClass: "popup__error_visible"
 }
+//Aqui va lo de la validacion----------------------------------------------------------------------------------------------
 const validateProfileForm= new FormValidator(formElement, settings);
 validateProfileForm.enableValidation();
-
 const validateAddForm= new FormValidator(addFormElement, settingsAdd);
 validateAddForm.enableValidation();
+ //Aqui es para editar perfil----------------------------------------------------------------------------------------------
+ const saveButton=document.querySelector("#editSave");
 
-//para la imagen
-// const popupWithImage = new PopupWithImage("#popup-image");
-// const openImage = document.querySelector(".popup__image-open");
-// openImage.addEventListener("click", () => {opupWithImage.open();});
-
- //Aqui es para editar perfil
-const handlerProfile= new Popup('#editProfile');
+ const popupEditProfile = new PopupWithForm('#editProfile', (values) => {
+  profileNameElement.textContent = values.name;  
+  profileAboutElement.textContent = values.about
+})
 const openModalButtonProfile = document.querySelector(".profile__edit");
-openModalButtonProfile.addEventListener("click", () => {handlerProfile.open();
-
-  const nameInput=formElement.querySelector("#editName");
-  const aboutInput=formElement.querySelector("#editAbout");
-  const profileElement= document.querySelector(".profile");
-  const profileNameElement= profileElement.querySelector(".profile__name");
-  const profileAboutElement= profileElement.querySelector(".profile__description");
+openModalButtonProfile.addEventListener("click", () => { 
   nameInput.value = profileNameElement.textContent; //le damos valor inicial a esos form que digan los nombres actuales
   aboutInput.value = profileAboutElement.textContent;
+  popupEditProfile.open();
 });
-
-//Aqui para agregar foto
-const handlerAdd= new Popup('#addImage');
+//Aqui es para el popup de agregar tarjeta---------------------------------------------------------------------------------------------------------------------
+const popupCards = new PopupWithForm('#addImage', (values) => {
+  // Utiliza el renderer de la instancia de Section para añadir una nueva tarjeta
+  const cardCreated = new Card(values.name, values.link, templateCard);
+  sectionCards.addItem(cardCreated.generateCard());
+});
 const openModalButtonAdd = document.querySelector(".profile__add");
-openModalButtonAdd.addEventListener("click", () => {handlerAdd.open();
+openModalButtonAdd.addEventListener("click", () => {
+  popupCards.open();
 });
-
-const sectionCards= new Section({
+//Aqui va la de abrir imagen-------------------------------------------------------
+const popupWithImage = new PopupWithImage('#popup__image'); 
+const openImage = document.querySelector(".popup__image-open");
+openImage.addEventListener("click", () => {
+  openImage.open();
+});
+// Instanciamos la clase Section--------------------------------------------------------------------------------------------------------------------------------
+const sectionCards = new Section({
   items: initialCards,
-  renderer: function(element){
-    const cardCreated = new Card (element.name, element.link, templateCard);
-    sectionCards.addItem(cardCreated.generateCard());
-  }//la logica de agregar cartas
+  renderer: function(item) {
+      const cardCreated = new Card(item.name, item.link, templateCard,(title,link)=>
+        {popupWithImage.open(title, link); });
+      sectionCards.addItem(cardCreated.generateCard());
+      //this.addItem(cardCreated.generateCard());
+  }
 }, ".elements__container-top");
+// Renderiza las tarjetas iniciales
 sectionCards.renderer();

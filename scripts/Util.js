@@ -1,19 +1,20 @@
+
 import Card from "./Card.js";
 
-const profileElement= document.querySelector(".profile");
-const profileNameElement= profileElement.querySelector(".profile__name");
-const profileAboutElement= profileElement.querySelector(".profile__description");
+export const profileElement= document.querySelector(".profile");
+export const profileNameElement= profileElement.querySelector(".profile__name");
+export const profileAboutElement= profileElement.querySelector(".profile__description");
 //const editProfileButton= document.querySelector(".profile__edit");//boton para popup nombre
-const editPopupElement= document.querySelector("#editProfile");//secc de popup
+export const editPopupElement= document.querySelector("#editProfile");//secc de popup
 export const formElement= document.querySelector("#editForm"); //los edit son para nombre y acerca de
-const nameInput=formElement.querySelector("#editName");
-const aboutInput=formElement.querySelector("#editAbout");
-const saveButton=document.querySelector("#editSave");
-const closeButton= editPopupElement.querySelector("#editCloseButton");
-const addPopupButton= document.querySelector(".profile__add");// boton pop up imagenes
-const addPopupElement= document.querySelector("#addImage");
-const addSaveButton=document.querySelector("#addSave");
-const addCloseButton= addPopupElement.querySelector("#addCloseButton");
+export const nameInput=formElement.querySelector("#editName");
+export const aboutInput=formElement.querySelector("#editAbout");
+export const saveButton=document.querySelector("#editSave");
+export const closeButton= editPopupElement.querySelector("#editCloseButton");
+export const addPopupButton= document.querySelector(".profile__add");// boton pop up imagenes
+export const addPopupElement= document.querySelector("#addImage");
+export const addSaveButton=document.querySelector("#addSave");
+export const addCloseButton= addPopupElement.querySelector("#addCloseButton");
 
 export const templateCard=document.querySelector(".template");
 export const cardArea= document.querySelector(".elements__container-top");
@@ -22,7 +23,7 @@ export const inputCardUrl=document.querySelector("#addLink");
 export const addFormElement= document.querySelector("#addForm");
 
 export const popupImage=document.querySelector("#popup__image");
-export const popupImageCloseButton=document.querySelector(".popup__image-close-button");
+export const popupImageCloseButton=document.querySelector(".popup__image-close-button");//aquiiiii de la imagen
 export const popupTitle=document.querySelector(".popup__title");
 export const popupOpenedImage=document.querySelector(".popup__image-open");
 //export const card = templateCard.cloneNode(true).content.querySelector(".elements__place");
@@ -101,7 +102,6 @@ function closeAddPopup(){
 
 function handleAddSubmit(event){
   event.preventDefault();
-  console.log("Si esta entrando aqui")
   if (event.submitter.classList.contains("popup__form-save-add")) {
     const card = new Card(inputCardTitle.value, inputCardUrl.value, templateCard);
     const newCardElement = card.generateCard();
@@ -129,15 +129,14 @@ function handleCloseImage(){
 //   });
 //editProfileButton.addEventListener("click",handleOpenEditPopup);
 //closeButton.addEventListener("click",closeEditPopup);
-saveButton.addEventListener("click",handleSaveInformation);
+//saveButton.addEventListener("click",handleSaveInformation);
 
 
 //addPopupButton.addEventListener("click",handleOpenAddPopup);
 //addCloseButton.addEventListener("click",closeAddPopup);
-addFormElement.addEventListener("submit",handleAddSubmit);
+//addFormElement.addEventListener("submit",handleAddSubmit);
 
 
 //popupImageCloseButton.addEventListener("click",handleCloseImage);
-document.removeEventListener("keydown", pressEsc);
-
+//document.removeEventListener("keydown", pressEsc);
 export{}

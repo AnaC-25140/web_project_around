@@ -1,9 +1,10 @@
 import {popupImage, popupOpenedImage, popupTitle} from "./Util.js"
 export default class Card{
-     constructor(title,link,template){
+     constructor(title,link,template, handleOpenImage){ //y aqui el handle
         this.title=title;
         this.link=link;
         this.template=template;
+        this.handleOpenImage= handleOpenImage; //agregue esta
     }
     _getCardClone(){
         this.card=this.template.cloneNode(true).content.querySelector(".elements__place");//clona propiedades y todo
@@ -21,29 +22,24 @@ export default class Card{
     }
     _handleLike(){
       this.handlelike= this.likeButton.classList.toggle("elements__box-heart-active");
-
     }
     _handleRemoveCard(){
       this._removeCard=this.card.remove();
     }
-     _handleOpenImageCard(){
-       popupOpenedImage.src=this.link;
-       popupOpenedImage.alt=this.title;
-       popupTitle.textContent=this.title;
-      popupImage.classList.add("popup__opened");
-    }
-    
+    _handleOpenImageCard() {
+      //Llama a la función de abrir el popup
+      this.handleOpenImage(this.title, this.link);
+  }
     _setEventListeners(){
       this.deleteButton.addEventListener("click", ()=>{
         this._handleRemoveCard();
       });
-      //  this.cardImage.addEventListener("click" , ()=>{
-      //    this._handleOpenImageCard();
-      //  } );
+        this.cardImage.addEventListener("click" , ()=>{
+          this._handleOpenImageCard();
+        } );
       this.likeButton.addEventListener("click", ()=>{
         this._handleLike();
       });
-      
     }
     generateCard(){
         this._getCardClone();

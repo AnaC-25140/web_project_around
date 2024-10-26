@@ -61,6 +61,7 @@
                   class="popup__form-name popup__input-profile" 
                   type="text" 
                   id="editName"
+                  name="name"
                   minlength="2"
                   maxlength="40"
                   required/>
@@ -71,6 +72,7 @@
                   id="editAbout"
                   minlength="2"
                   maxlength="200"
+                  name="about"
                   required/>
                   <span class="editAbout-error popup__error"></span>
                   <button 
@@ -101,12 +103,14 @@
                   placeholder="Titulo"
                   minlength="2"
                   maxlength="30"
+                  name="name"
                   required/>
                   <span class="addTitle-error popup__error"></span>
                   <input 
                   class="popup__form-about popup__input-add" 
                   type="url" 
                   id="addLink"
+                  name="about"
                   placeholder="Enlace a la imagen"
                   required/>
                   <span class="addLink-error popup__error"></span>
@@ -123,12 +127,13 @@
         <section class=" popup" id="popup__image">
           <div class="popup__container">
             <div class="popup__container-inside">
-              <a class="popup__image-close"><img
+              <div class="popup__image-close"><img
                 src="./images/Close-Icon.png"
                 alt="Boton para cerrar formulario"
-                class="popup__image-close-button " 
+                class="popup__image-close-button "
+        
                 />
-              </a>
+              </div>
                 <img
                 class="popup__image-open"
                 alt="Pop up de imagen"
