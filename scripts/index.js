@@ -1,6 +1,7 @@
 import  FormValidator  from "./FormValidator.js";
 import Card from "./Card.js";
-import {initialCards, templateCard, addFormElement,formElement,nameInput,aboutInput,profileNameElement,profileAboutElement} from "./Util.js";
+import UserInfo from "./UserInfo.js";
+import {initialCards, templateCard, addFormElement,formElement,nameInput,aboutInput} from "./Util.js";
 import { Section } from "./Section.js";
 import  PopupWithImage  from "./PopupWithImage.js";
 import { PopupWithForm } from "./PopupWithForm.js";
@@ -26,17 +27,25 @@ const validateProfileForm= new FormValidator(formElement, settings);
 validateProfileForm.enableValidation();
 const validateAddForm= new FormValidator(addFormElement, settingsAdd);
 validateAddForm.enableValidation();
+//Instanciamos userinfo
+const userInfo = new UserInfo({
+  nameSelector: '.profile__name',
+  aboutSelector: '.profile__description'
+});
  //Aqui es para editar perfil----------------------------------------------------------------------------------------------
  const saveButton=document.querySelector("#editSave");
 
  const popupEditProfile = new PopupWithForm('#editProfile', (values) => {
-  profileNameElement.textContent = values.name;  
-  profileAboutElement.textContent = values.about
+  userInfo.setUserInfo({
+    name: values.name,
+    about: values.about
+  });
 })
 const openModalButtonProfile = document.querySelector(".profile__edit");
 openModalButtonProfile.addEventListener("click", () => { 
-  nameInput.value = profileNameElement.textContent; //le damos valor inicial a esos form que digan los nombres actuales
-  aboutInput.value = profileAboutElement.textContent;
+  const currentUserInfo = userInfo.getUserInfo();
+  nameInput.value = currentUserInfo.name;
+  aboutInput.value = currentUserInfo.about;
   popupEditProfile.open();
 });
 //Aqui es para el popup de agregar tarjeta---------------------------------------------------------------------------------------------------------------------
