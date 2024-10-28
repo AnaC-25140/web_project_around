@@ -1,3 +1,12 @@
+import "./styles/index.css"
+import header from "./images/Header.png" ;
+import profilePicture from "./images/Profile.jpg";
+import profileEdit from "./images/Edit_button.png";
+import profileAdd from "./images/Add.png";
+import editClose from "./images/Close-Icon.png";
+import closeForm from "./images/Close-Icon.png";
+import closeFormImageSecond from "./images/Close-Icon.png";
+import trashButton from "./images/Delate-button.png";
 import  FormValidator  from "./FormValidator.js";
 import Card from "./Card.js";
 import UserInfo from "./UserInfo.js";
@@ -5,6 +14,32 @@ import {initialCards, templateCard, addFormElement,formElement,nameInput,aboutIn
 import { Section } from "./Section.js";
 import  PopupWithImage  from "./PopupWithImage.js";
 import { PopupWithForm } from "./PopupWithForm.js";
+document.addEventListener("DOMContentLoaded", () => {
+  const headerImg = document.getElementById("header");
+  if (headerImg) headerImg.src = header;
+
+  const profilePictureImg = document.getElementById("profileImage");
+  if (profilePictureImg) profilePictureImg.src = profilePicture;
+
+  const profileEditImg = document.getElementById("openModal");
+  if (profileEditImg) profileEditImg.src = profileEdit;
+
+  const profileAddImg = document.getElementById("profileEditImg");
+  if (profileAddImg) profileAddImg.src = profileAdd;
+
+  const profileEditCloseImg = document.getElementById("editCloseButton");
+  if (profileEditCloseImg) profileEditCloseImg.src = editClose;
+
+  const closeFormImg = document.getElementById("formClose");
+  if (closeFormImg) closeFormImg.src = closeForm;
+
+  const closeFormImage = document.getElementById("formClose");
+  if (closeFormImage) closeFormImage.src = closeFormImageSecond;
+
+  const trashButtonImg = document.getElementById("trashButton");
+  if (trashButtonImg) trashButtonImg.src = trashButton;
+});
+
 //lo de aqui es para la validacion
 const settings={
   formSelector: ".popup__form-profile",
@@ -34,7 +69,6 @@ const userInfo = new UserInfo({
 });
  //Aqui es para editar perfil----------------------------------------------------------------------------------------------
  const saveButton=document.querySelector("#editSave");
-
  const popupEditProfile = new PopupWithForm('#editProfile', (values) => {
   userInfo.setUserInfo({
     name: values.name,

@@ -7,33 +7,31 @@
     <meta name="keywords" content="Html, CSS, tripleten" />
     <meta name="description" content="Perfil de una red social donde puedes cambiar cierto contenido y compartir imagenes" />
     <title>Pagina de Ana C</title>
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
     <div class="page">
       <header class="header">
         <div class="header__container">
-          <img src="./images/Header.png" alt="logo" class="header__logo" />
+          <img alt="logo" class="header__logo" id="header"/>
         </div>
       </header>
       <main class="content">
         <section class="profile">
           <div class="profile__container">
             <img
-                src="./images/Profile.jpg"
+                id="profileImage"
                 alt="Imagen de perfil"
                 class="profile__picture" />
             <h2 class="profile__name">Jacques Cousteau</h2>
             <h3 class="profile__description">Explorer</h3>
             <div class="profile__edit" ><img
-                src="./images/Edit_button.png"
                 alt="Boton para editar"
                 class="profile__img"
                 id="openModal"
                  /></div>
               <div class="profile__add">
                 <img
-                src="./images/Add.png"
+                id="profileEditImg"
                 alt="Boton para agregar"
                 class="profile__add-button" />
               </div>
@@ -48,13 +46,11 @@
             <div class="popup__align">
 
               <div class="popup__close"><img
-                src="./images/Close-Icon.png"
                 alt="Boton para cerrar formulario"
                 class="popup__close-button"
                 id="editCloseButton" 
                 />
               </div>
-
                 <form class="popup__form popup__form-profile" id="editForm" novalidate >
                   <h2 class="popup__form-title">Edit profile</h2>
                   <input 
@@ -89,7 +85,6 @@
           <div class="popup__container" id="modalBackground"  >
             <div class="popup__align">
               <div class="popup__close"><img
-                src="./images/Close-Icon.png"
                 alt="Boton para cerrar formulario"
                 class="popup__close-button" 
                 id="addCloseButton" />
@@ -128,13 +123,13 @@
           <div class="popup__container">
             <div class="popup__container-inside">
               <div class="popup__image-close"><img
-                src="./images/Close-Icon.png"
+                id="formClose"
                 alt="Boton para cerrar formulario"
                 class="popup__image-close-button "
-        
                 />
               </div>
                 <img
+                id="popupImageID"
                 class="popup__image-open"
                 alt="Pop up de imagen"
                 src="."/>
@@ -162,13 +157,11 @@
           <button class="elements__box-heart" ></button>
         </div>
         <a><img
-          src="./images/Delate-button.png"
+          id="trashButton"
           alt="Boton para eliminar imagen"
           class="elements__place-delate " /></a>
       </div>
-    </template>
-    <script src="./scripts/index.js" type="module"></script>
-    
+    </template> 
   </div>
   </body>
 </html>

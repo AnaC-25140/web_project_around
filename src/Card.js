@@ -1,3 +1,4 @@
+import trashButton from "./images/Delate-button.png";
 export default class Card{
      constructor(title,link,template, handleOpenImage){ //y aqui el handle
         this.title=title;
@@ -18,6 +19,9 @@ export default class Card{
       this.cardTitle = this.card.querySelector(".elements__box-name");
       this.likeButton=this.card.querySelector(".elements__box-heart");
       this.deleteButton=this.card.querySelector(".elements__place-delate");
+      if (this.deleteButton) {
+        this.deleteButton.src = trashButton;
+     }
     }
     _handleLike(){
       this.handlelike= this.likeButton.classList.toggle("elements__box-heart-active");
