@@ -28,8 +28,6 @@ export default class FormValidator{
         } else {
             this._hideInputError(inputElement);
         }
-        
-        
     }
     _hasInvalidInput(){
         return this.inputList.some((inputElement) => {
@@ -39,8 +37,10 @@ export default class FormValidator{
     _toggleButtonState(){
         if (this._hasInvalidInput()) {
             this.buttonElement.classList.add(this.inactiveButtonClass);
+            this.buttonElement.disabled=true;
           } else {
             this.buttonElement.classList.remove(this.inactiveButtonClass);
+            this.buttonElement.disabled=false;
           }
     }
     _setEventListeners(){
@@ -52,7 +52,21 @@ export default class FormValidator{
           });
         });
     }
+    resetFormValidation(){
+        this.formElement.reset();
+        this.inputList.forEach((inputElement)=>{
+            this._hideInputError(inputElement);
+        })
+        this._toggleButtonState();
+    }
     enableValidation(){
+            this.formElement.addEventListener("keydown", (evt)=>
+            {
+                console.log(evt.key)
+                if(evt.key==="Enter"){
+                    return false
+                }
+            })
         this._setEventListeners();
     }
     }

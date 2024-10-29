@@ -5,7 +5,10 @@ import profileEdit from "./images/Edit_button.png";
 import profileAdd from "./images/Add.png";
 import editClose from "./images/Close-Icon.png";
 import closeForm from "./images/Close-Icon.png";
-import closeFormImageSecond from "./images/Close-Icon.png";
+
+import addCloseButtonImg from "./images/Close-Icon.png";
+
+
 import trashButton from "./images/Delate-button.png";
 import  FormValidator  from "./FormValidator.js";
 import Card from "./Card.js";
@@ -26,15 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const profileAddImg = document.getElementById("profileEditImg");
   if (profileAddImg) profileAddImg.src = profileAdd;
+  const addCloseButtonImage = document.getElementById("addCloseButton");
+  if (addCloseButtonImage) addCloseButtonImage.src = addCloseButtonImg;
 
   const profileEditCloseImg = document.getElementById("editCloseButton");
   if (profileEditCloseImg) profileEditCloseImg.src = editClose;
 
   const closeFormImg = document.getElementById("formClose");
   if (closeFormImg) closeFormImg.src = closeForm;
-
-  const closeFormImage = document.getElementById("formClose");
-  if (closeFormImage) closeFormImage.src = closeFormImageSecond;
 
   const trashButtonImg = document.getElementById("trashButton");
   if (trashButtonImg) trashButtonImg.src = trashButton;
@@ -78,6 +80,7 @@ const userInfo = new UserInfo({
 const openModalButtonProfile = document.querySelector(".profile__edit");
 openModalButtonProfile.addEventListener("click", () => { 
   const currentUserInfo = userInfo.getUserInfo();
+  validateProfileForm.resetFormValidation();
   nameInput.value = currentUserInfo.name;
   aboutInput.value = currentUserInfo.about;
   popupEditProfile.open();
@@ -85,7 +88,9 @@ openModalButtonProfile.addEventListener("click", () => {
 //Aqui es para el popup de agregar tarjeta---------------------------------------------------------------------------------------------------------------------
 const popupCards = new PopupWithForm('#addImage', (values) => {
   // Utiliza el renderer de la instancia de Section para añadir una nueva tarjeta
-  const cardCreated = new Card(values.name, values.link, templateCard);
+  const cardCreated = new Card(values.name, values.link, templateCard,  (title,link) => {
+    return popupWithImage.open(title, link);
+  });
   sectionCards.addItem(cardCreated.generateCard());
 });
 const openModalButtonAdd = document.querySelector(".profile__add");
@@ -102,10 +107,15 @@ openImage.addEventListener("click", () => {
 const sectionCards = new Section({
   items: initialCards,
   renderer: function(item) {
-      const cardCreated = new Card(item.name, item.link, templateCard,(title,link)=>
-        {popupWithImage.open(title, link); });
+      const cardCreated = new Card(
+        item.name, 
+        item.link, 
+        templateCard,
+        (title,link) => {
+          return popupWithImage.open(title, link);
+        } 
+      );
       sectionCards.addItem(cardCreated.generateCard());
-      //this.addItem(cardCreated.generateCard());
   }
 }, ".elements__container-top");
 // Renderiza las tarjetas iniciales

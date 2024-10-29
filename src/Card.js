@@ -4,7 +4,7 @@ export default class Card{
         this.title=title;
         this.link=link;
         this.template=template;
-        this.handleOpenImage= handleOpenImage; //agregue esta
+        this.handleOpenImage= handleOpenImage;
     }
     _getCardClone(){
         this.card=this.template.cloneNode(true).content.querySelector(".elements__place");//clona propiedades y todo
@@ -30,7 +30,6 @@ export default class Card{
       this._removeCard=this.card.remove();
     }
     _handleOpenImageCard() {
-      //Llama a la función de abrir el popup
       this.handleOpenImage(this.title, this.link);
   }
     _setEventListeners(){
