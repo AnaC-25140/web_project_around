@@ -13,11 +13,37 @@
   white-space: nowrap;
   overflow: hidden;
 }
-.profile__picture{
+.profile__picture-container {
   grid-area: picture;
+  position: relative;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  max-width: 120px;
-  max-height: 120px;
+  overflow: hidden; 
+  cursor: pointer;
+}
+.profile__picture {
+  border-radius: 50%;
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+}
+.profile__picture-editar {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 26px; 
+  height: 26px; 
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.profile__picture-container:hover .profile__picture {
+  opacity: 50%; 
+}
+.profile__picture-container:hover .profile__picture-editar {
+  opacity: 1; 
 }
 .profile__name{
   grid-area: name;

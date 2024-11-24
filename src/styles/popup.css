@@ -1,3 +1,26 @@
+.delete{
+  display: flex;
+}
+.popup__form-profile-picture{
+  width: 430px;
+  height: 272px;
+  border: 1px;
+  background-color: #FFFFFF;
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.popup__form-deleteImage{
+  width: 430px;
+  height: 181px;
+  border: 1px;
+  background-color: #FFFFFF;
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
 .popup__container{
   display: flex;
   background-color: rgba(0, 0, 0, 0.479);
@@ -34,6 +57,7 @@
   text-align: left;
   margin: 34px auto 0 36px;
 }
+
 .popup__form-name{
   width: 358px;
   margin: 54px auto 0 36px;
@@ -56,9 +80,46 @@
   letter-spacing: 0em;
   text-align: left;
 }
+.popup__form-about-profile{
+  width: 358px;
+  margin: 54px auto 0 36px;
+  border: 0;
+  border-bottom: 1px solid #000000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+}
 .popup__form-save{
   width: 358px;
   height: 51px;
+  margin: 48px auto auto 36px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 2px;
+}
+.popup__form-save-delete{
+  width: 358px;
+  height: 50px;
+  margin: 38px auto auto 36px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 2px;
+}
+.popup__form-save-profile{
+  width: 358px;
+  height: 50px;
   margin: 48px auto auto 36px;
   font-size: 18px;
   font-weight: 400;

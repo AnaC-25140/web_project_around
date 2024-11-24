@@ -18,10 +18,18 @@
       <main class="content">
         <section class="profile">
           <div class="profile__container">
-            <img
+            <div class="profile__picture-container">
+              <img
+                name="avatar"
                 id="profileImage"
                 alt="Imagen de perfil"
                 class="profile__picture" />
+                <img
+                name="vector"
+                id="vectorProfile"
+                alt="Imagen para editar perfil"
+                class="profile__picture-editar"/>
+            </div>
             <h2 class="profile__name">Jacques Cousteau</h2>
             <h3 class="profile__description">Explorer</h3>
             <div class="profile__edit" ><img
@@ -138,6 +146,56 @@
             </div>
           </div>
         </section>
+        <section class="popup" id="deleteImage">
+          <div class="popup__container" id="modalBackground">
+              <div class="popup__align">
+                  <div class="popup__close">
+                      <img
+                          alt="Botón para cerrar formulario"
+                          class="popup__close-button"
+                          id="deleteCloseButton" 
+                      />
+                  </div>
+                  <form class="popup__form-deleteImage">
+                      <h2 class="popup__form-title">¿Estás seguro?</h2>
+                      <button
+                          class="popup__form-save-delete" 
+                          type="submit" 
+                          id="deleteImageButton">
+                          Sí
+                      </button>
+                  </form>
+              </div>
+          </div>
+      </section>
+      <section class="popup" id="addProfilePicture"> //aqui estaba usando delete para ver mi formulario
+        <div class="popup__container" id="modalBackground"  >
+          <div class="popup__align">
+            <div class="popup__close"><img
+              id="addCloseProfilePicture" 
+              alt="Boton para cerrar formulario"
+              class="popup__close-button" 
+              />
+            </div>
+              <form class="popup__form-profile-picture" id="profileForm" novalidate>
+                <h2 class="popup__form-title">Cambiar foto de perfil</h2>
+                <input 
+                class="popup__form-about-profile" 
+                type="url" 
+                id="addLinkProfile"
+                name="link"
+                placeholder="Enlace a la imagen"
+                required/>
+                <button 
+                class="popup__form-save popup__form-save-profile" 
+                type="submit" 
+                id="addSave">
+                Guardar
+              </button>
+              </form>
+          </div>
+        </div>
+      </section>
       </main>
       <footer class="footer">
         <div class="footer__container">
@@ -157,7 +215,6 @@
           <button class="elements__box-heart" ></button>
         </div>
         <a><img
-          id="trashButton"
           alt="Boton para eliminar imagen"
           class="elements__place-delate " /></a>
       </div>

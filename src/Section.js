@@ -4,6 +4,9 @@ export class Section{
         this._renderer=renderer;
         this.container=document.querySelector(selector);
     }
+    setItems(items) {
+        this.items = items;
+      }
     renderer(){
         //renderiza con un item especial
         this.items.forEach((item) => this._renderer(item));
@@ -12,4 +15,5 @@ export class Section{
     addItem(element){
 this.container.prepend(element);
     }
+
 }
