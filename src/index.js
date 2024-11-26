@@ -152,7 +152,12 @@ openImage.addEventListener("click", () => {
 });
 //Aqui va lo de la imagen del perfil-----------------------------------
 const avatarForm = new PopupWithForm('#addProfilePicture', (formData) => {
+  const saveButton = document.getElementById("addSave"); // Botón de guardar
   const avatarUrl = formData.link; // Obtén el enlace ingresado en el formulario
+
+  // Cambiar el texto del botón a "Guardando..."
+  saveButton.textContent = "Guardando...";
+  saveButton.disabled = true;
 
   api.updateAvatar(avatarUrl)
     .then((userData) => {
@@ -165,6 +170,11 @@ const avatarForm = new PopupWithForm('#addProfilePicture', (formData) => {
     .catch((err) => {
       console.error("Error al actualizar el avatar:", err);
       alert("No se pudo actualizar el avatar. Asegúrate de ingresar un enlace válido.");
+    })
+    .finally(() => {
+      // Restaura el texto del botón a "Guardar" y habilítalo
+      saveButton.textContent = "Guardar";
+      saveButton.disabled = false;
     });
 });
 const openModalPicture = document.querySelector(".profile__picture-container");

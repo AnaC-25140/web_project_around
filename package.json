@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/AnaC-25140/web_project_around/issues"
   },
-  "homepage": "https://github.com/AnaC-25140/web_project_around#readme",
+  "homepage": "https://anac-25140.github.io/web_project_around",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
