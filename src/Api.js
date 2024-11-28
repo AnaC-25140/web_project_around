@@ -65,15 +65,18 @@ export default class Api {
     }
     toggleLikeCard(cardId, isLiked) {
       const method = isLiked ? 'PUT' : 'DELETE'; // PUT si es un "like", DELETE si es un "unlike"
-      return fetch(`${this._mainUrl}/cards/likes/${cardId}`, {
+      return fetch(`${this._mainUrl}/cards/${cardId}/likes/`, {
         method: method,
         headers: this._headers
       })
-      .then(this._checkResponse)
-      .catch((err) => {
-        console.error("Error al actualizar el estado del like:", err);
+      .then((res) => {
+        if (!res.ok) {
+          return Promise.reject(`Error: ${res.status}`);
+        }
+        return res.json();
       });
     }
+   
     deleteCard(cardId) {
       return fetch(`${this._mainUrl}/cards/${cardId}`, {
         method: "DELETE", // Usamos DELETE para eliminar la tarjeta

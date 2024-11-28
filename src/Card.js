@@ -36,22 +36,29 @@ export default class Card{
       this.handleOpenImage(this.title, this.link);
   }
   _toggleLike() {
-    this.isLiked = !this.isLiked;
-    if (this.isLiked) {
-      this.likeButton.classList.add("elements__box-heart-active");
-    } else {
-      this.likeButton.classList.remove("elements__box-heart-active");
-    }
-    this.handleLike(this.cardId, this.isLiked);
+    const newLikeStatus = !this.isLiked; // Cambiar el estado local antes de enviar la solicitud
+    this.handleLike(this.cardId, newLikeStatus)
+      .then((updatedLikes) => {
+        this.isLiked = newLikeStatus; // Actualiza el estado solo si la API responde correctamente
+        this.likeButton.classList.toggle("elements__box-heart-active", this.isLiked);
+        
+        // Actualizar el contador de likes si la API devuelve el número de likes
+        if (updatedLikes !== undefined) {
+          const likeCounter = this.card.querySelector(".elements__box-like-counter");
+          likeCounter.textContent = updatedLikes;
+        }
+      })
+      .catch((err) => {
+        console.error("Error al actualizar el estado de like:", err);
+      });
   }
+
     _setEventListeners(){
         this.deleteButton.addEventListener("click", ()=> {
           console.log("Eliminando tarjeta con ID:", this.cardId); 
           this.handleDeleteClick(this.cardId,this.card)
           //this._handleRemoveCard();
         });
-      
-      
         this.cardImage.addEventListener("click" , ()=>{
           this._handleOpenImageCard();
         } );
@@ -64,19 +71,4 @@ export default class Card{
         this._setEventListeners();
         return this.card;
     }
-    handleDeleteClick(cardId, cardElement, popupDeleteConfirmation) {
-      // Configura la acción para eliminar la tarjeta en el popup de confirmación
-      popupDeleteConfirmation.setSubmitAction(() => {
-        api.deleteCard(cardId) // Eliminar la tarjeta de la API
-          .then(() => {
-            cardElement.remove(); // Eliminarla del DOM
-            popupDeleteConfirmation.close(); // Cierra el popup
-          })
-          .catch((err) => console.error("Error al eliminar la tarjeta:", err)); // Manejo de errores
-      });
-  
-      // Abre el popup de confirmación
-      popupDeleteConfirmation.open();
-    }
-    
 }

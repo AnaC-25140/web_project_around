@@ -73,9 +73,11 @@ validateProfileForm.enableValidation();
 const validateAddForm= new FormValidator(addFormElement, settingsAdd);
 validateAddForm.enableValidation();
 //Instanciamos userinfo
+
 const userInfo = new UserInfo({
   nameSelector: '.profile__name',
-  aboutSelector: '.profile__description'
+  aboutSelector: '.profile__description',
+  avatarSelector: '#profileImage', // Selector para la imagen de perfil
 });
  //Aqui es para editar perfil----------------------------------------------------------------------------------------------
  const saveButton=document.querySelector("#editSave");
@@ -112,7 +114,11 @@ const createCard = (item) => {
     templateCard,
     (title, link) => popupWithImage.open(title, link),
     (cardId, isLiked) => {
-      console.log(`Card ID: ${cardId}, Is Liked: ${isLiked}`);
+      return api.toggleLikeCard(cardId, isLiked)
+        .then((data) => {
+          // Supongamos que la API devuelve el número total de likes en `data.likes`
+          return data.likes; // Cambiar según el formato exacto de la respuesta de la API
+        });
     },
     item._id,
     item.isLiked,
@@ -129,7 +135,6 @@ const createCard = (item) => {
     }
   );
 };
-
 const popupCards = new PopupWithForm('#addImage', (values) => {
   api.addCard(values.name, values.link)
     .then((nuevaCard) => {
@@ -198,29 +203,42 @@ const sectionCards = new Section({
 sectionCards.renderer();
 //Api--------------------------------------------------------------------------------------------------
  //----------------------------------Api para cargar las tarjetas
+ const cardsContainer=document.querySelector(".elements__container-top");
  api.getCards()
   .then((cards) => {
+    console.log("Tarjetas obtenidas del servidor", cards);
     cards.forEach((item) => {
-      const card = createCard(item); // Usa la función centralizada
-      sectionCards.addItem(card.generateCard());
+      const cardElement = createCard(item).generateCard();
+      cardsContainer.append(cardElement);
     });
-  });
+  })
+  .catch((err) => console.error("Error al cargar las tarjetas:", err));
 
-api.getUserInfo()
+  api.getUserInfo()
   .then((data) => {
-    // Asignar los datos a los elementos del DOM
+    // Asignar los datos al DOM
     nameInput.textContent = data.name;
     aboutInput.textContent = data.about;
     profileAvatar.src = data.avatar;
     profileAvatar.alt = `Avatar de ${data.name}`;
-    console.log("ID del usuario:", data._id); 
-    console.log("Nombre:", data.name); 
-    console.log("About:", data.about); 
+
+    // Actualizar la instancia de UserInfo
+    userInfo.setUserInfo({
+      name: data.name,
+      about: data.about,
+      avatar: data.avatar,
+    });
+
+    console.log("ID del usuario:", data._id);
+    console.log("Nombre:", data.name);
+    console.log("About:", data.about);
     console.log("Avatar:", data.avatar);
   })
   .catch((err) => {
     console.error("Error al cargar la información del usuario:", err);
   });
+  
+
  
   
 
